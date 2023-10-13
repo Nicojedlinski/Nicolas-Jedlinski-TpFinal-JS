@@ -326,6 +326,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const nombreProducto = pack.querySelector("h2").textContent;
         const precioProducto = parseFloat(producto.querySelector("p").textContent.replace("$", ""));
         
+
+        const carritoLength = carrito.length;
+        localStorage.setItem("carritoLength", JSON.stringify("carritoLength"))
+        nombreProducto.innerText = JSON.parse(localStorage.getItem("carritoLength"))  
+        nombreProducto.innerText = "Carrito";
+
+
         const elementoCarrito = document.createElement("div");
         elementoCarrito.classList.add("item-carrito");
         elementoCarrito.innerHTML = `
@@ -349,6 +356,10 @@ const titulo1 = document.querySelector("h1 span"),
 const btn = document.querySelector("#btn"),
   contenedor = document.querySelector(".contenedor");
 
+  const carritoLength = carrito.length;
+  localStorage.setItem("carritoLength", JSON.stringify("carritoLength"))
+  titulo1.innerText = JSON.parse(localStorage.getItem("carritoLength"))
+
 titulo.innerText = "Carrito";
 tituloSecundario.innerText = "Asincronía y promesas";
 const servicios = [
@@ -366,6 +377,27 @@ const servicios = [
     precio: 2000,
   },
 ];
+
+const CarritoLength = carrito.length;
+        localStorage.setItem("carritoLength", JSON.stringify("carritoLength"))
+        nombreProducto.innerText = JSON.parse(localStorage.getItem("carritoLength"))  
+        nombreProducto.innerText = "Carrito";
+
+
+localStorage.setItem("packBasic", "basic");
+console.log(localStorage.getItem("packBasic"));
+
+localStorage.setItem("packPremium", "premium");
+console.log(localStorage.getItem("packPremium"));
+
+localStorage.setItem("packGold", "gold");
+console.log(localStorage.getItem("packgGold"));
+
+localStorage.setItem("Carrito", JSON.stringify, (Carrito)),
+
+JSON.parse(localStorage.getItem("Carrito"))
+
+
 
 //asincronía
 function square(num) {
@@ -391,5 +423,5 @@ fetch("./js/productos.json")
         document.getElementById("products-id").style.display = "block";
     }
     function closeBtn(){
-         document.getElementById("products-id").style.display = "none";
+        document.getElementById("products-id").style.display = "none";
     }

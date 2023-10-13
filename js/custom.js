@@ -115,13 +115,20 @@ function loadHtml(){
 
     //boton de finalizar compra
 
-    // Obtener el botón por su ID
 const botonFinalizarCompra = document.getElementById("finalizarCompra");
 
 // Agregar un evento de clic al botón
 botonFinalizarCompra.addEventListener("click", function() {
-    // Aquí puedes agregar la lógica para finalizar la compra
-    // Puedes redirigir a una página de pago o mostrar un formulario de pago
-    // Ejemplo de redirección a una página de pago:
     window.location.href = "pagina-de-pago.html";
 });
+
+localStorage.setItem("packBasic", "basic");
+console.log(localStorage.getItem("packBasic"));
+
+localStorage.setItem("packPremium", "premium");
+console.log(localStorage.getItem("packPremium"));
+
+localStorage.setItem("packGold", "gold");
+console.log(localStorage.getItem("packgGold"));
+
+
