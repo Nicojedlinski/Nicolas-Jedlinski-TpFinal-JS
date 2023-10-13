@@ -113,6 +113,29 @@ function loadHtml(){
         document.getElementById("products-id").style.display = "none";
     } 
 
+
+
+
+localStorage.removeItem("carrito");
+
+const userJson = JSON.stringify(user);
+localStorage.setItem("user", userJson);
+
+const userDesdeStorage = JSON.parse(localStorage.getItem("user"));
+/* console.log(userDesdeStorage.nickname); */
+const carrito = [];
+
+carrito.push(servicios[0]);
+carrito.push(servicios[5]);
+localStorage.setItem("carrito", JSON.stringify(carrito));
+
+const btnMostrar = document.querySelector(".btn.btn-buscar");
+const btnLimpiar = document.querySelector(".btn.btn-limpiar");
+
+btnLimpiar.addEventListener("click", () => {
+  localStorage.removeItem("carrito");
+});
+
     //boton de finalizar compra
 
 const botonFinalizarCompra = document.getElementById("finalizarCompra");
